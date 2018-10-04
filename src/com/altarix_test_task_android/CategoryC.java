@@ -43,18 +43,20 @@ public abstract class CategoryC {
             Scanner scanner = new Scanner(System.in);
             String s = scanner.nextLine();
             while (s.compareTo("q")!=0){
-                switch (s) {
-                    case "info": info(); break;
-                    case "memory": calculator.printMemory(); break;
-                    case "file": read_file_data(calculator); break;
-                    default:
-                        try {
-                            System.out.println(calculator.calculate(s));
-                        } catch (Calculator.CalculatorException e) {
-                            System.out.println(e.getMessage());
-                        }
-                        System.out.println();
-                        break;
+                if (s.trim().compareTo("")!=0){
+                    switch (s) {
+                        case "info": info(); break;
+                        case "memory": calculator.printMemory(); break;
+                        case "file": read_file_data(calculator); break;
+                        default:
+                            try {
+                                System.out.println(calculator.calculate(s));
+                            } catch (Calculator.CalculatorException e) {
+                                System.out.println(e.getMessage());
+                            }
+                            System.out.println();
+                            break;
+                    }
                 }
                 System.out.print("Ввод: ");
                 s = scanner.nextLine();

@@ -366,6 +366,9 @@ public class Calculator implements AutoCloseable, Serializable{
         catch(EOFException ex){
             //ok
         }
+        catch (FileNotFoundException ex){
+            //ok
+        }
         catch (Exception ex){
             System.out.println(ex.getMessage());
         }
